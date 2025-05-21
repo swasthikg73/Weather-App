@@ -1,0 +1,23 @@
+<div class="right-containe">
+
+    <div class="right-container-nav-bar">
+
+        <div class="nav-bar-tab">
+            <div class="today" [className]="today==true?'today-active':'today'" (click)="onClickToday()">Today</div>
+            <div class="week" [className]="week == true?'week-active':'week'" (click)="onClickWeek()">Week</div>
+            <div class="underline" [className]="today==true ? 'underline underline-today' :'underline underline-week'">
+            </div>
+        </div>
+
+        <div class="nav-bar-metric">
+            <div class="celsius" [className]="celsius== true ? 'celsius-active':'celsius'" (click)="onClickCelsius()">°C
+            </div>
+            <div class="fahrenhiet" [className]="fahrenhiet == true ? 'fahrenhiet-active' :'fahrenhiet'"
+                (click)="onClickFahrenhiet()">°F</div>
+            <div class="profile-image"><img src="/Images/profile.png" alt="Progile Image"></div>
+        </div>
+
+    </div>
+
+    <div class="right-container-data-box"></div>
+</div>

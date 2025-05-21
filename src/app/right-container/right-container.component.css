@@ -1,0 +1,156 @@
+/* Outer container for right container*/
+.right-containe {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Css for Nav bar*/
+.right-container-nav-bar {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small;
+  font-weight: bold;
+}
+
+/* Css for Nav bar Tabs*/
+.nav-bar-tab {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+/* Css for Today tab and for hover and active */
+.today {
+  margin-right: 10px;
+  color: #c5c5c5;
+}
+
+.today:hover {
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+.today-active {
+  color: #1a1a1a;
+  margin-right: 10px;
+}
+
+/* Css for week tab and for hover and active */
+.week {
+  color: #c5c5c5;
+}
+
+.week:hover {
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+.week-active {
+  color: #1a1a1a;
+}
+
+/* Css for underline */
+.underline {
+  width: 40px;
+  height: 2px;
+  background-color: #1a1a1a;
+  margin-top: 1.3rem;
+}
+
+.underline-today {
+  transform: translate3d(-215%, 0, 0);
+  transition: 100ms;
+}
+
+.underline-week {
+  transform: translate3d(-90%, 0, 0);
+  transition: 100ms;
+}
+
+/* Css for Nav bar metric*/
+.nav-bar-metric {
+  display: flex;
+  flex-direction: row;
+  margin-right: 30px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Css for Celsius and fahrenit*/
+.celsius {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border-radius: 500px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: small;
+}
+
+.celsius:hover {
+  color: #ffffff;
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+
+.celsius-active {
+  color: #ffffff;
+  background-color: #1a1a1a;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: small;
+border-radius: 500px;
+}
+
+.fahrenhiet {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border-radius: 500px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: small;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.fahrenhiet:hover {
+  color: #ffffff;
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+
+.fahrenhiet-active {
+  color: #ffffff;
+  background-color: #1a1a1a;
+   padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: small;
+border-radius: 500px;
+margin-left: 10px;
+}
+
+.profile-image img {
+  height: 35px;
+  width: 35px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.right-container-data-box {
+  flex: 12;
+}
