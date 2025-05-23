@@ -4,8 +4,9 @@
 
         <div class="search-icon" (click)="onClickSearch(location.value)" style="cursor: pointer;"><fa-icon class="fa-xs"
                 [icon]="faMagnifyingGlass"></fa-icon></div>
-        <div class="search-input"><input type="text" placeholder="Search for Places..." #location></div>
-        <div class="location-icon"><fa-icon class="fa-xs" [icon]="faLocation"></fa-icon></div>
+        <div class="search-input"><input type="text" placeholder="Search for Places..." #location #required></div>
+        <div class="location-icon" (click)="onClickSearch(location.value)" style="cursor: pointer;"><fa-icon
+                class="fa-xs" [icon]="faLocation"></fa-icon></div>
     </div>
 
     <div class="left-container-data-box">

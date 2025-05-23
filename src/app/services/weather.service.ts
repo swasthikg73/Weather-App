@@ -8,8 +8,7 @@ import { WeekData } from '../Models/WeekData';
 import { TodaysHighlight } from '../Models/TodaysHighlight';
 import { Observable } from 'rxjs';
 import { EnviromentVariables } from '../Environment/EnvironmentVariables';
-import { response } from 'express';
-import { error } from 'console';
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +28,7 @@ export class WeatherService {
 
 
   //Varables used for Api Calls
-  cityName: string = 'Mangaluru';
+  cityName: string = 'Bangalore';
   language: string = 'en-Us';
   date: string = '20250523';
   units: string = 'm';
@@ -72,7 +71,7 @@ export class WeatherService {
     this.TemparatureData.day = this.weathearDetails['v3-wx-observations-current'].dayOfWeek;
     this.TemparatureData.time = `${String(this.cutrrentTime.getHours()).padStart(2, '0')}:${String(this.cutrrentTime.getMinutes()).padStart(2, '0')}`;
     this.TemparatureData.temparature = this.weathearDetails['v3-wx-observations-current'].temperature;
-    this.TemparatureData.location = `${this.locationDetails.location.city[2]},${this.locationDetails.location.country[2]}`
+    this.TemparatureData.location = `${this.locationDetails.location.city[0]},${this.locationDetails.location.country[0]}`
     this.TemparatureData.rainPercent = this.weathearDetails['v3-wx-observations-current'].precip24Hour;
     this.TemparatureData.summaryPhrase = this.weathearDetails['v3-wx-observations-current'].wxPhraseShort;
     this.TemparatureData.summaryImage = this.getSummaryImage(this.TemparatureData.summaryPhrase);
@@ -173,16 +172,26 @@ export class WeatherService {
   getData() {
     var latitude = 0;
     var longitude = 0;
+
+    this.todayData = [];
+    this.weekData = [];
+    this.TemparatureData = new CurrentTempData();
+    this.todayHighlight = new TodaysHighlight();
+
     this.getLocationDetails(this.cityName, this.language).subscribe({
       next: (response) => {
         this.locationDetails = response;
         latitude = this.locationDetails?.location.latitude[0];
         longitude = this.locationDetails?.location.longitude[0];
+        // console.log("Locatin Details: ", this.locationDetails);
+        // console.log("Latitiude", this.locationDetails?.location.latitude[0]);
+        // console.log("longitude", this.locationDetails?.location.longitude[0]);
 
         //once we get the values for lat and long we can call for the getWeatherReport method
         this.getWeatherReport(this.date, latitude, longitude, this.language, this.units).subscribe({
           next: (res) => {
             this.weathearDetails = res;
+            //console.log("Weather Details :", res);
             this.prepareData()
           },
           error: (error: HttpErrorResponse) => { console.log(error.message); }

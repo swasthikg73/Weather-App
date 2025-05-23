@@ -32,6 +32,6 @@ export class LeftContainerComponent {
   onClickSearch(location: string) {
     // console.log(location);
     this.weatherService.cityName = location;
-
+    this.weatherService.getData();
   }
 }

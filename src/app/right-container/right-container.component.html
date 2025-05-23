@@ -167,8 +167,8 @@
                         {{this.weatherService.todayHighlight.humidity}} <sup class="unit">%</sup>
                     </div>
                     <div class="hunidity-summary">
-                        Normal
-                        <span><fa-icon class="fa-xm" style="color: #4050d2;" [icon]="faThumbsUp"></fa-icon></span>
+                        {{this.weatherService.todayHighlight.humidity <50 ?'Normal':'High'}} <span><fa-icon
+                                class="fa-xm" style="color: #4050d2;" [icon]="faThumbsUp"></fa-icon></span>
                     </div>
                 </div>
 
@@ -179,7 +179,7 @@
                             style="margin-top: -20px;">km</span>
                     </div>
                     <div class="hunidity-summary">
-                        Average
+                        {{this.weatherService.todayHighlight.visibility > 2 ?"Normal":"Less"}}
                         <span><fa-icon class="fa-xm" style="color: #4050d2;" [icon]="faFacesmile"></fa-icon></span>
                     </div>
                 </div>
@@ -190,8 +190,8 @@
                         {{this.weatherService.todayHighlight.airQuality}}
                     </div>
                     <div class="hunidity-summary">
-                        Unhealthy
-                        <span style="margin-left: 2px;" style="color: #4050d2;"><fa-icon class="fa-xm"
+                        {{this.weatherService.todayHighlight.airQuality < 100 ? "Satisfactory" : "Unhealthy" }} <span
+                            style="margin-left: 2px;" style="color: #4050d2;"><fa-icon class="fa-xm"
                                 [icon]="faThumbsDown"></fa-icon></span>
                     </div>
                 </div>
