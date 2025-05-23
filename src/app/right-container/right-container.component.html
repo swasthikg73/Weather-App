@@ -19,5 +19,187 @@
 
     </div>
 
-    <div class="right-container-data-box"></div>
+    <div class="right-container-data-box">
+        @if(week){
+        <div class="right-container-week-cards-box">
+
+            @for (item of this.weatherService.weekData; track $index) {
+            <div class="card">
+                <div class="card-day">{{item.day}}</div>
+                <div class="card-temp-img"><img src={{item.summaryImage}} alt="image"></div>
+                <div class="card-temp-value"><span class="temp-max">{{this.weatherService.celsius == true ? item.tempMax
+                        : this.weatherService.celsiusTofahrenheit(item.tempMax)}}° </span> <span class="temp-min">
+                        {{this.weatherService.celsius == true ? item.tempMin
+                        : this.weatherService.celsiusTofahrenheit(item.tempMin)}}° </span></div>
+            </div>
+            }
+            <!-- <div class="card">
+                <div class="card-day">Sun</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value"><span class="temp-max">15°</span> <span class="temp-min">13°</span></div>
+            </div>
+
+            <div class="card">
+                <div class="card-day">Sun</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value"><span class="temp-max">15°</span> <span class="temp-min">13°</span></div>
+            </div>
+
+            <div class="card">
+                <div class="card-day">Sun</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value"><span class="temp-max">15°</span> <span class="temp-min">13°</span></div>
+            </div>
+
+            <div class="card">
+                <div class="card-day">Sun</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value"><span class="temp-max">15°</span> <span class="temp-min">13°</span></div>
+            </div>
+
+            <div class="card">
+                <div class="card-day">Sun</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value"><span class="temp-max">15°</span> <span class="temp-min">13°</span></div>
+            </div>
+
+            <div class="card">
+                <div class="card-day">Sun</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value"><span class="temp-max">15°</span> <span class="temp-min">13°</span></div>
+            </div> -->
+
+        </div>
+        }@else {
+        <div class="right-container-todays-card">
+            @for (item of this.weatherService.todayData; track $index) {
+            <div class="card">
+                <div class="card-day">{{item.time}}</div>
+                <div class="card-temp-img"><img src={{item.summaryImage}} alt="image"></div>
+                <div class="card-temp-value">{{this.weatherService.celsius == true ? item.temprautre
+                    : this.weatherService.celsiusTofahrenheit(item.temprautre)}} °</div>
+            </div>
+            }
+            <!-- <div class="card">
+                <div class="card-day">12:00</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value">15°</div>
+            </div>
+
+            <div class="card">
+                <div class="card-day">12:00</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value">15°</div>
+            </div>
+
+            <div class="card">
+                <div class="card-day">12:00</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value">15°</div>
+            </div>
+
+            <div class="card">
+                <div class="card-day">12:00</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value">15°</div>
+            </div>
+
+            <div class="card">
+                <div class="card-day">12:00</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value">15°</div>
+            </div>
+
+            <div class="card">
+                <div class="card-day">12:00</div>
+                <div class="card-temp-img"><img src="/Images/sun.png" alt="image"></div>
+                <div class="card-temp-value">15°</div>
+            </div> -->
+        </div>
+        }
+
+
+        <div class="right-container-todays-highlight">
+            <div class="right-container-todays-highlight-title">Today's Highlights</div>
+
+            <div class="right-container-todays-highlights-cards">
+                <div class="right-container-todays-highlights-card">
+                    <div class="right-container-todays-highlights-card-title">UV Index</div>
+                    <div class="gauge">
+                        <div class="gauge-body">
+                            <div class="gauge-fill"></div>
+                            <div class="gauge-cover"></div>
+                        </div>
+                    </div>
+                    <div class="right-container-todays-highlights-value">{{this.weatherService.todayHighlight.uiIndex}}
+                    </div>
+                </div>
+
+                <div class="right-container-todays-highlights-card">
+                    <div class="right-container-todays-highlights-card-title">Wind Status</div>
+                    <div class="wind-status-value">{{this.weatherService.todayHighlight.windStatus}} <span
+                            class="unit">km/h</span>
+                    </div>
+                    <div class="wind-status-logo"><img src="/Images/wind.png" alt="wind image"></div>
+                </div>
+
+                <div class="right-container-todays-highlights-card">
+                    <div class="right-container-todays-highlights-card-title">Sunrise & Sunset</div>
+                    <div class="sunrise-sunset-value">
+                        <div class="sunrise">
+                            <div class="sunrise-img"><img src="/Images/sunrise.png" alt=""></div>
+                            <div class="sunrise-time">{{this.weatherService.todayHighlight.sunrise}} AM</div>
+                        </div>
+
+                        <div class="sunset">
+                            <div class="sunset-img"><img src="/Images/sunset.png" alt=""></div>
+                            <div class="sunset-time">{{this.weatherService.todayHighlight.sunset}} PM</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="right-container-todays-highlights-cards">
+                <div class="right-container-todays-highlights-card">
+                    <div class="right-container-todays-highlights-card-title">Humidity</div>
+                    <div class="wind-status-value" style="align-self: self-start; margin-left: 20px;">
+                        {{this.weatherService.todayHighlight.humidity}} <sup class="unit">%</sup>
+                    </div>
+                    <div class="hunidity-summary">
+                        Normal
+                        <span><fa-icon class="fa-xm" style="color: #4050d2;" [icon]="faThumbsUp"></fa-icon></span>
+                    </div>
+                </div>
+
+                <div class="right-container-todays-highlights-card">
+                    <div class="right-container-todays-highlights-card-title">Visibility</div>
+                    <div class="wind-status-value" style="align-self: self-start; margin-left: 20px;">
+                        {{this.weatherService.todayHighlight.visibility}} <span class="unit"
+                            style="margin-top: -20px;">km</span>
+                    </div>
+                    <div class="hunidity-summary">
+                        Average
+                        <span><fa-icon class="fa-xm" style="color: #4050d2;" [icon]="faFacesmile"></fa-icon></span>
+                    </div>
+                </div>
+
+                <div class="right-container-todays-highlights-card">
+                    <div class="right-container-todays-highlights-card-title">Air Quality</div>
+                    <div class="wind-status-value" style="align-self: self-start; margin-left: 20px;">
+                        {{this.weatherService.todayHighlight.airQuality}}
+                    </div>
+                    <div class="hunidity-summary">
+                        Unhealthy
+                        <span style="margin-left: 2px;" style="color: #4050d2;"><fa-icon class="fa-xm"
+                                [icon]="faThumbsDown"></fa-icon></span>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
 </div>

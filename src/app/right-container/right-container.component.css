@@ -151,6 +151,256 @@ margin-left: 10px;
   margin-left: 10px;
   margin-right: 10px;
 }
+
+
+
 .right-container-data-box {
   flex: 12;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  margin-top: 10px;
+
+}
+
+.right-container-week-cards-box{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  width: 95px;
+  height: 120px;
+  background-color: #ffffffff;
+  border-radius: 10px;
+  margin-left: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.card-temp-img img{
+  width: 45px;
+  height: 52px;
+  margin-bottom: 6px;
+}
+
+.card-day{
+  margin: 5px;
+  margin-top: 7px;
+}
+
+.card-temp-value{
+}
+
+.right-container-todays-card{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-container-todays-highlight{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.right-container-todays-highlight-title{
+  flex: 2;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  font-size: medium;
+  font-weight: bold;
+
+}
+
+.right-container-todays-highlights-cards{
+  display: flex;
+  flex:10;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-container-todays-highlights-card{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffffff;
+  border-radius: 15px;
+  width: 200px;
+  height: 170px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.right-container-todays-highlights-card-title{
+  flex: 1;
+  color: #c9c9c9;
+  align-items: center;
+  font-size: small;
+  font-weight: bold;
+  margin-top: 13px;
+  /* margin-right: 90px; */
+
+}
+
+.gauge{
+  flex: 2;
+  width: 70%;
+  max-width: 200px;
+  font-size: 32px;
+  color:#004033 ;
+  font-weight: 500;
+  margin-bottom: -10px;
+ }
+
+.gauge-body{
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  background: #f3f3f4;
+  position: relative;
+  border-top-left-radius: 100% 200%;
+  border-top-right-radius: 100% 200%;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.gauge-fill{
+  position:absolute;
+  top: 100;
+  left: 0;
+  width: inherit;
+  height: 100%;
+  background: #fdb953;
+  transform-origin: center top;
+  transform: rotate(0.25turn);
+  transition: transform 0.2s ease-out;
+}
+
+.gauge-cover{
+  width: 75%;
+  height: 150%;
+  background: #ffffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25%;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+.right-container-todays-highlights-value{
+  flex: 1;
+  font-size: xx-large;
+  font-weight: 500;
+  margin-bottom: 10px;
+  z-index:2;
+}
+
+.wind-status-value{
+flex: 2;
+font-size: 40px;
+font-weight: 500;
+margin-left: -20px;
+}
+
+.unit{
+font-size: 18px;
+font-weight: 500;
+}
+
+.wind-status-logo{
+  flex: 1;
+  align-self:self-start ;
+  margin-left: 25px;
+  /* border-radius: 500px; */
+}
+
+.wind-status-logo img{
+  width: 30px;
+  height: 30px;
+  padding: auto;
+}
+
+.sunrise-sunset-value{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  margin-top: -20px;
+}
+
+.sunrise{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+   justify-content: center;
+  align-items: center;
+}
+
+.sunrise-img{
+  flex: 1;
+  margin-left: -45px;
+  margin-right: 10px;
+
+}
+
+.sunrise-img img{
+   width:35px ; 
+   height: 35px;
+}
+
+.sunrise-time{
+flex: 2;
+}
+
+.sunset{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+}
+
+.sunset-img{
+  flex: 1;
+  margin-left: -45px;
+  margin-right: 10px;
+}
+
+.sunset-img img{
+ width:35px ; 
+   height: 35px;
+}
+
+.sunset-time{
+flex: 2;
+}
+
+.hunidity-summary{
+  font-size: medium;
+  font-weight: 500;
+  align-self: self-start; 
+  margin-left: 20px; 
+  margin-bottom: 20px;
 }
