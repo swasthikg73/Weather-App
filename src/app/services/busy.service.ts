@@ -14,10 +14,10 @@ export class BusyService {
     this.busyRequestCount++;
     this.spinnerService;
     this.spinnerService.show(undefined, {
-      type: 'ball-atom',
-      bdColor: 'rgba(0,0,0,0.8)',
+      type: 'ball-climbing-dot',
+      bdColor: 'rgba(0.8,0,0,0.8)',
       color: '#fff',
-      size: 'default'
+      size: 'medium'
     })
   }
 

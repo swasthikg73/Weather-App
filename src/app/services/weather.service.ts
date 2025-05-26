@@ -28,9 +28,9 @@ export class WeatherService {
 
 
   //Varables used for Api Calls
-  cityName: string = 'Bangalore';
+  cityName: string = 'Mangaluru';
   language: string = 'en-Us';
-  date: string = '20250523';
+  date: string = '20250526';
   units: string = 'm';
 
   //Varaiable holding current time
