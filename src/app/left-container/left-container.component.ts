@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCloud } from '@fortawesome/free-solid-svg-icons';
 import { faCloudRain } from '@fortawesome/free-solid-svg-icons';
 import { WeatherService } from '../services/weather.service';
+// import locationData from '../asset/locations.json'
 
 
 
@@ -23,10 +24,10 @@ export class LeftContainerComponent {
   //Varaiables for temparature summary
   faCloud: any = faCloud
   faCloudRain: any = faCloudRain;
-  currenttime = new Date
-
+  currenttime = new Date;
 
   constructor(public weatherService: WeatherService) {
+
   }
 
   onClickSearch(location: string) {
